@@ -96,6 +96,39 @@
                 </div>
             </section>
         </div>
+        <div class="food-table">
+            <h2>🍽️ 你，最爱吃什么菜？</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>妈妈</th>
+                        <th>奶奶</th>
+                        <th>爸爸</th>
+                        <th>爷爷</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>椒盐排骨</td>
+                        <td>糖醋排骨</td>
+                        <td>西红柿炒鸡蛋</td>
+                        <td>大头菜烤年糕</td>
+                    </tr>
+                    <tr>
+                        <td>避风塘皮皮虾</td>
+                        <td>土豆饼</td>
+                        <td>苹果蛋炒饭</td>
+                        <td>四喜烤麸</td>
+                    </tr>
+                    <tr>
+                        <td>糖醋熏鱼</td>
+                        <td>油炸带鱼</td>
+                        <td>海鲜面</td>
+                        <td>红糕炝蟹</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 <style>
@@ -332,6 +365,52 @@
         .artist-img { height: 250px; }
         iframe { height: 250px; }
         .grid { gap: 2rem; margin: 2rem 0; }
+    }
+
+    .food-table {
+        margin: 3rem 0;
+        padding: 2rem;
+        background: rgba(255,255,255,0.95);
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem auto;
+        table-layout: fixed;
+    }
+
+    th, td {
+        padding: 1.2rem;
+        text-align: center;
+        border: 1px solid rgba(109, 104, 117, 0.2); /* var(--primary) with opacity */
+        font-size: 1rem;
+    }
+
+    th {
+        background: var(--primary);
+        color: white;
+        font-weight: 500;
+        letter-spacing: 1px;
+        position: sticky;
+        top: 0;
+    }
+
+    tbody tr:nth-child(even) {
+        background: rgba(255, 180, 162, 0.05); /* var(--light) with opacity */
+    }
+
+    tbody tr:hover {
+        background: rgba(181, 131, 141, 0.08); /* var(--secondary) with opacity */
+        transform: scale(1.02);
+        transition: all 0.3s ease;
+    }
+
+    td {
+        color: var(--text);
+        transition: all 0.2s;
     }
 </style>
 </html>
