@@ -1,0 +1,108 @@
+[
+  {
+    "id": 1,
+    "title": "则知的喜好博物馆",
+    "description": "个人喜好展示页面，使用HTML和CSS创建的简洁美观的博物馆风格页面。",
+    "imageUrl": "https://source.unsplash.com/random/600x400?museum,art",
+    "link": "/practice/01-Preferences.html",
+    "tags": [
+      "HTML",
+      "CSS",
+      "个人页面"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "诗词的女儿——叶嘉莹女士",
+    "description": "纪念叶嘉莹女士的页面，展示其生平、诗词传承和学术贡献。",
+    "imageUrl": "https://source.unsplash.com/random/600x400?poetry,chinese",
+    "link": "/practice/02-yejiaying.html",
+    "tags": [
+      "HTML",
+      "CSS",
+      "纪念页面"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "古琴雅韵",
+    "description": "展示古琴文化、历史、名曲和指法的专题页面，使用CSS美化布局。",
+    "imageUrl": "https://source.unsplash.com/random/600x400?guqin,music",
+    "link": "/practice/03-css-01.html",
+    "tags": [
+      "HTML",
+      "CSS",
+      "文化专题"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "网球赛场：概念演示",
+    "description": "使用CSS动画、Flexbox和Grid布局模拟网球比赛场景，展示CSS核心概念。",
+    "imageUrl": "https://source.unsplash.com/random/600x400?tennis,court",
+    "link": "/practice/04-css-01.html",
+    "tags": [
+      "CSS",
+      "动画",
+      "布局"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "网球场地：位置的控制",
+    "description": "通过相对定位和绝对定位展示网球场地元素的位置控制技术。",
+    "imageUrl": "https://source.unsplash.com/random/600x400?tennis,position",
+    "link": "/practice/04-css-02.relative.html",
+    "tags": [
+      "CSS",
+      "定位",
+      "布局"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "JavaScript 核心语法学习一",
+    "description": "JavaScript基础语法练习，包括变量、数据类型、条件语句和循环。",
+    "imageUrl": "https://source.unsplash.com/random/600x400?javascript,code",
+    "link": "/practice/05-news01.html",
+    "tags": [
+      "JavaScript",
+      "编程基础"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "JavaScript 语法练习2",
+    "description": "进阶JavaScript练习，包括类、对象、继承和DOM操作。",
+    "imageUrl": "https://source.unsplash.com/random/600x400?javascript,programming",
+    "link": "/practice/06-news01.html",
+    "tags": [
+      "JavaScript",
+      "面向对象",
+      "DOM"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "JavaScript 异步编程练习",
+    "description": "JavaScript异步编程练习，包括Promise、async/await和Fetch API。",
+    "imageUrl": "https://source.unsplash.com/random/600x400?async,javascript",
+    "link": "/practice/07-async-01.html",
+    "tags": [
+      "JavaScript",
+      "异步编程",
+      "API"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Next.js 核心概念",
+    "description": "学习Next.js框架的核心概念：组件、jsx、props",
+    "imageUrl": "https://www.bing.com/th/id/OIP._f7r2jhr7HHcNDqJL1652wHaEo?w=268&h=180&c=7&r=0&o=5&pid=1.7s",
+    "tags": [
+      "React",
+      "组件",
+      "SPA"
+    ]
+  }
+]
