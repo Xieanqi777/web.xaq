@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>敦煌文化之旅</title>
+    <style>
+        :root {
+            --morandiDesert: #E6DACE;      /* 敦煌沙漠色 */
+            --morandiTerracotta: #C8A99B;  /* 陶土色 */
+            --morandiOchre: #B38867;       /* 赭石色 */
+            --morandiDark: #8A7968;        /* 深褐色 */
+            --morandiBlue: #94A7B0;        /* 壁画蓝 */
+            --morandiGreen: #A4AE9D;       /* 壁画绿 */
+            --morandiRed: #C1A299;         /* 壁画红 */
+            --morandiGold: #D9C7A7;        /* 金色 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: var(--morandiDesert);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--morandiOchre);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        h2 {
+            color: var(--morandiDark);
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--morandiTerracotta);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--morandiOchre);
+            margin: 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .dunhuang-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .dunhuang-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .dunhuang-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: var(--morandiTerracotta);
+            color: white;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .image-placeholder {
+            background-color: var(--morandiGold);
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--morandiDark);
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+
+        .dunhuang-info {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin: 2rem 0;
+        }
+
+        button {
+            background-color: var(--morandiOchre);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        button:hover {
+            background-color: var(--morandiDark);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--morandiTerracotta);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--morandiGold);
+            border: 4px solid var(--morandiOchre);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .interactive-demo {
+            margin: 2rem 0;
+        }
+
+        .demo-element {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-element:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: var(--morandiDark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+    <script>
+        // 类和对象
+        class DunhuangArtifact {
+            constructor(name, age, location, type) {
+                this.name = name;
+                this.age = age;
+                this.location = location;
+                this.type = type;
+            }
+            display(museum = "敦煌研究院") {
+                return `${this.name}正在${museum}展出，这是一件${this.type}文物！`;
+            }
+            restore() {
+                return `${this.name} 正在进行修复工作`;
+            }
+        }
+        
+        let flyingApsara = new DunhuangArtifact("飞天壁画", 1500, "莫高窟第445窟", "壁画");
+        
+        class DigitalArtifact extends DunhuangArtifact {
+            constructor(name, age, location, type, technology, resolution) {
+                super(name, age, location, type);
+                this.technology = technology;
+                this.resolution = resolution;
+            }
+
+            digitize(method) {
+                return `${this.name}使用${method}进行数字化，分辨率为${this.resolution}`;
+            }
+        }
+
+        let digitalFlyingApsara = new DigitalArtifact("数字飞天", 1500, "莫高窟第445窟", "壁画", "3D扫描", "8K");
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>敦煌文化之旅</h1>
+        <p>探索千年文明的艺术瑰宝</p>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2>敦煌简介</h2>
+            <p>敦煌，古称沙州，位于中国甘肃省西部，是古丝绸之路上的重要城市。敦煌莫高窟始建于前秦时期的公元366年，历经十六国、北朝、隋、唐、五代、西夏、元等历代的兴建，形成了巨大的规模，有洞窟735个，壁画4.5万平方米、彩塑2415尊，是世界上现存规模最大、内容最丰富的佛教艺术地。</p>
+            <p>莫高窟是中国四大石窟之一，1987年，莫高窟被列为世界文化遗产。敦煌艺术以壁画和彩塑为主，内容丰富，包括佛教故事、飞天、供养人、山水风景等，体现了中国古代绘画艺术的精湛技艺和审美观念。</p>
+        </section>
+
+        <h2>敦煌艺术珍品</h2>
+        
+        <div class="dunhuang-section">
+            <div class="dunhuang-card">
+                <div class="card-header">飞天壁画</div>
+                <div class="card-body">
+                    <div class="image-placeholder">飞天壁画</div>
+                    <p>飞天是敦煌壁画中最具代表性的形象，形象优美，姿态各异，衣带飘飘，给人以轻盈飘逸之感。飞天壁画展现了古代艺术家对美的追求和想象力。</p>
+                    <button onclick="alert(flyingApsara.display('数字敦煌展览馆'))">查看展览信息</button>
+                </div>
+            </div>
+
+            <div class="dunhuang-card">
+                <div class="card-header">数字化文物保护</div>
+                <div class="card-body">
+                    <div class="image-placeholder">数字化飞天</div>
+                    <p>敦煌文物的数字化保护是现代科技与传统文化结合的典范。通过高精度扫描和3D建模技术，可以永久保存这些珍贵文物的数字副本，便于研究和展示。</p>
+                    <button onclick="alert(digitalFlyingApsara.digitize('高精度摄影'))">查看数字化信息</button>
+                </div>
+            </div>
+
+            <div class="dunhuang-card">
+                <div class="card-header">壁画修复工程</div>
+                <div class="card-body">
+                    <div class="image-placeholder">壁画修复过程</div>
+                    <p>敦煌壁画的修复是一个精细而漫长的过程，需要专业的技术和耐心。修复专家需要使用特殊材料和工具，小心翼翼地修复壁画上的裂缝和褪色部分，使其恢复原貌。</p>
+                    <button id="restoreBtn">查看修复过程</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="dunhuang-info">
+            <h2>敦煌艺术的特色</h2>
+            <p><strong>飞天：</strong>飞天是敦煌壁画中最具代表性的形象，是佛教艺术中的仙女形象。飞天形象优美，姿态各异，衣带飘飘，给人以轻盈飘逸之感。</p>
+            <p><strong>壁画技法：</strong>敦煌壁画采用了晕染、勾勒、点染等多种技法，色彩鲜艳，线条流畅，构图严谨，是中国古代绘画艺术的瑰宝。</p>
+            <p><strong>佛教故事：</strong>敦煌壁画中有大量的佛教故事画，如《降魔变》、《涅槃变》等，这些壁画生动地展现了佛教教义和故事。</p>
+            <p><strong>供养人像：</strong>供养人像是敦煌壁画中的重要内容，记录了不同时期的服饰、发型等社会风貌，是研究古代社会生活的重要资料。</p>
+        </section>
+
+        <section class="timeline">
+            <h2>敦煌莫高窟发展时间线</h2>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>公元366年</h3>
+                    <p>前秦时期，乐僔开凿第一个洞窟，莫高窟始建。</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>隋唐时期（581-907年）</h3>
+                    <p>莫高窟的鼎盛时期，开凿了大量精美洞窟，壁画艺术达到顶峰。</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>宋元时期（960-1368年）</h3>
+                    <p>开凿活动减少，但修缮工作仍在进行。</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>1900年</h3>
+                    <p>道士王圆箓发现藏经洞，大量珍贵文物重见天日。</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>1944年</h3>
+                    <p>敦煌艺术研究所成立，开始系统保护莫高窟。</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>1987年</h3>
+                    <p>莫高窟被列入世界文化遗产名录。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="interactive-demo">
+            <h2>敦煌文化体验</h2>
+            <p>点击下方展品，了解更多敦煌文化信息：</p>
+            <div class="demo-element" id="demo">
+                <h3>敦煌壁画展示</h3>
+                <p>点击查看壁画详情</p>
+            </div>
+            <div class="demo-element" id="anotherp">
+                <h3>敦煌文物数据库</h3>
+                <p>点击访问数据库</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 敦煌文化之旅</p>
+        <p>本页面致敬敦煌艺术的永恒魅力</p>
+    </footer>
+
+    <script>
+        // 异步操作示例
+        setTimeout(function() {
+            console.log("敦煌数据加载完成");
+        }, 1000);
+
+        // DOM操作
+        let myh1 = document.getElementById("demo");
+        myh1.onclick = function() {
+            this.innerHTML = "<h3>飞天壁画</h3><p>莫高窟第445窟，初唐时期</p>";
+            this.style.backgroundColor = "var(--morandiGold)";
+            alert("这是敦煌莫高窟中最著名的飞天壁画之一！");
+        };
+
+        let myp = document.getElementById("anotherp");
+        myp.onclick = function () {
+            this.innerHTML = "<h3>数字敦煌</h3><p>已收录10,000+文物数据</p>";
+            this.style.backgroundColor = "var(--morandiBlue)";
+            alert("欢迎访问敦煌文物数字化平台！");
+        };
+
+        // 修复按钮功能
+        let restoreBtn = document.getElementById("restoreBtn");
+        restoreBtn.onclick = function() {
+            this.innerHTML = "修复中...";
+            this.disabled = true;
+            
+            setTimeout(() => {
+                alert("壁画修复完成！色彩更加鲜艳，细节更加清晰。");
+                this.innerHTML = "修复完成";
+                this.style.backgroundColor = "var(--morandiGreen)";
+            }, 2000);
+        };
+
+        window.onload = function () {
+            console.log("敦煌文化页面加载完成");
+        };
+    </script>
+</body>
+</html>

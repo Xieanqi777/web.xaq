@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>网球场地：位置的控制</title>
+    <style type="text/css">
+      body {
+        width: 100%; /* 使用100%宽度 */
+        max-width: 1200px; /* 限制最大宽度 */
+        margin: 0 auto;
+        font-family: 'Arial', sans-serif; /* 更现代的字体 */
+        font-size: 16px; /* 稍微调整字体大小 */
+        line-height: 1.7em;
+        background-color: #90B44B; /* 网球场地绿色 */
+        color: #333;
+        padding: 20px; /* 增加内边距 */
+        box-sizing: border-box; /* 让padding包含在宽度内 */
+      }
+      /* 整体容器，模拟球场 */
+      .court-wrapper {
+        width: 100%;
+        position: relative; /* 为绝对定位元素提供参考 */
+        display: flex; /* 使用flex布局来排列三个主要区域 */
+        justify-content: space-between; /* 三个区域之间的间距 */
+        gap: 20px; /* 区域间距 */
+        padding-top: 50px; /* 为标题预留空间 */
+      }
+
+      /* 三个主要的场地区域 */
+      .court-section {
+        width: 300px; /* 固定区域宽度 */
+        float: none; /* 移除浮动，由flex控制 */
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        flex-shrink: 0; /* 防止区域缩小 */
+      }
+
+      /* 正常球的轨迹 (Normal Flow) */
+      .normal-ball {
+        /* 该元素不设置position，遵循正常的流动 */
+      }
+
+      /* 球员的微调移动 (相对定位) */
+      .player-adjust {
+        position: relative; /* 相对于其正常位置进行调整 */
+        top: 80px; /* 模拟接球前的小碎步向后移动 */
+        left: 0; /* 保持水平位置 */
+        color: #D05A6E; /* 使用拍把红色 */
+      }
+
+      /* 特殊控制的球 (绝对定位) */
+      .special-ball {
+        position: absolute; /* 脱离正常流动，相对于父级 court-wrapper 定位 */
+        top: 120px; /* 精确放置在场地某个位置 */
+        left: 350px; /* 精确放置在场地某个位置 */
+        z-index: 10; /* 确保在其他元素之上 */
+        color: #F2E750; /* 使用网球黄色 */
+      }
+
+      /* 背景效果，模拟球场线 */
+      .bg {
+        background-color: #F2E750; /* 网球黄色 */
+        border: 3px dashed #D05A6E; /* 拍把红色的虚线边框 */
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      /* 场地标题 */
+      h2 {
+        color: #D05A6E; /* 拍把红色 */
+        border-bottom: 2px solid #F2E750; /* 网球黄色下划线 */
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="court-wrapper">
+      <!-- 正常流程区域：球在场地上的自然滚动 -->
+      <div class="court-section">
+        <h2>球场自然轨迹</h2>
+        <p>这是一个发球，球按照正常轨迹在场地线上滚动。</p>
+        <p>它只是随着重力，沿着预设的路径向前。</p>
+        <p class="bg normal-ball">这个球是场地的一部分，随着场地一起移动。</p>
+        <p>
+          你无法从正常轨迹中将其分离，它就是球场的一部分。
+        </p>
+        <p>我们关注的是球落点的位置。</p>
+      </div>
+
+      <!-- 相对定位区域：球员的微小调整 -->
+      <div class="court-section">
+        <h2>球员的微调</h2>
+        <p>比赛精彩！球员正在准备接发球。</p>
+        <p>他根据球的落点，进行微小的步法调整。</p>
+        <p class="bg relative player-adjust">这个球稍微向后移动了80像素，就像接球前球员的小碎步侧移。</p>
+        <p>
+          你看，它并没有脱离整体的流畅运动，只是在自己的“正常位置”上做了些微调。
+        </p>
+        <p>裁判只是微微注意到这个调整。</p>
+        <code>.relative { position: relative; top:80px;}</code>
+      </div>
+
+      <!-- 绝对定位区域：特殊控制的球 -->
+      <div class="court-section">
+        <h2>特殊控制的球</h2>
+        <p>突然！一个未经允许的球被扔进了场地！</p>
+        <p>它被精确地定在了场地中央，脱离了正常滚动。</p>
+        <p class="bg absolute special-ball">这个球被直接放置在距离场地顶部120像素，左侧350像素的位置。</p>
+        <p>
+          它不再受其他球的影响，也不会影响场地的自然流程。它完全是“自己”的。
+        </p>
+        <p>它被特殊管理，不属于球场上的任何一个正常轨迹。</p>
+        <code>.absolute { position: absolute; top:120px; left:350px;} </code>
+      </div>
+    </div>
+  </body>
+</html>
