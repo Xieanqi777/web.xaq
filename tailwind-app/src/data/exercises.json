@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "title": "则知的喜好博物馆",
+    "description": "个人喜好展示页面，使用HTML和CSS创建的简洁美观的博物馆风格页面。",
+    "imageUrl": "images/fengmian/1.png",
+    "link": "/practice/01-Preferences.html",
+    "tags": [
+      "HTML",
+      "CSS",
+      "个人页面"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "诗词的女儿——叶嘉莹女士",
+    "description": "纪念叶嘉莹女士的页面，展示其生平、诗词传承和学术贡献。",
+    "imageUrl": "images/fengmian/2.png",
+    "link": "/practice/02-yejiaying.html",
+    "tags": [
+      "HTML",
+      "CSS",
+      "纪念页面"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "古琴雅韵",
+    "description": "展示古琴文化、历史、名曲和指法的专题页面，使用CSS美化布局。",
+    "imageUrl": "images/fengmian/3.png",
+    "link": "/practice/03-css-01.html",
+    "tags": [
+      "HTML",
+      "CSS",
+      "文化专题"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "网球赛场：概念演示",
+    "description": "使用CSS动画、Flexbox和Grid布局模拟网球比赛场景，展示CSS核心概念。",
+    "imageUrl": "images/fengmian/4.png",
+    "link": "/practice/04-css-01.html",
+    "tags": [
+      "CSS",
+      "动画",
+      "布局"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "网球场地：位置的控制",
+    "description": "通过相对定位和绝对定位展示网球场地元素的位置控制技术。",
+    "imageUrl": "images/fengmian/5.png",
+    "link": "/practice/04-css-02.relative.html",
+    "tags": [
+      "CSS",
+      "定位",
+      "布局"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "中国古典舞艺术",
+    "description": "JavaScript基础语法练习，包括变量、数据类型、条件语句和循环。",
+    "imageUrl": "images/fengmian/6.png",
+    "link": "/practice/05-news01.html",
+    "tags": [
+      "JavaScript",
+      "编程基础"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "敦煌文化之旅",
+    "description": "进阶JavaScript练习，包括类、对象、继承和DOM操作。",
+    "imageUrl": "images/fengmian/7.png",
+    "link": "/practice/06-news01.html",
+    "tags": [
+      "JavaScript",
+      "面向对象",
+      "DOM"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "中国人民大学校史展示",
+    "description": "JavaScript异步编程练习，包括Promise、async/await和Fetch API。",
+    "imageUrl": "images/fengmian/8.png",
+    "link": "/practice/07-async-01.html",
+    "tags": [
+      "JavaScript",
+      "异步编程",
+      "API"
+    ]
+  }
+]

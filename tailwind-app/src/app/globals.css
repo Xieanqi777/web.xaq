@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+:root {
+  /* 莫兰迪紫色调色板 */
+  --morandiPurple: #9d8ba1; /* 主色调：莫兰迪紫 */
+  --morandiLightPurple: #c5b7c9; /* 浅莫兰迪紫 */
+  --morandiDarkPurple: #6a5d6e; /* 深莫兰迪紫 */
+  
+  /* 辅助莫兰迪色调 */
+  --morandiBlue: #a0b2c3; /* 莫兰迪蓝 */
+  --morandiGreen: #a8b9a8; /* 莫兰迪绿 */
+  --morandiPink: #d9c1bb; /* 莫兰迪粉 */
+  --morandiBeige: #e2d5c3; /* 莫兰迪米色 */
+  --morandiGray: #d1d1cf; /* 莫兰迪灰 */
+  
+  /* 莫兰迪黄色调色板 */
+  --morandiYellow: #e6d49a; /* 莫兰迪黄 */
+  --morandiLightYellow: #faf8f0; /* 莫兰迪淡黄 - 更透明淡雅 */
+  --morandiDarkYellow: #d4c284; /* 莫兰迪深黄 */
+  
+  /* 基础变量 */
+  --background: #f8f6f9; /* 浅紫色背景 */
+  --foreground: #3c3540; /* 深紫色文本 */
+  
+  /* 传统色彩定义 */
+  --color-heritage-red: #dc2626;
+  --color-heritage-gold: #d97706;
+  --color-heritage-blue: #1e40af;
+  --color-heritage-ink: #374151;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2a262d;
+    --foreground: #e5e3e8;
+    --morandiPurple: #7d6d81;
+    --morandiLightPurple: #9a8c9e;
+    --morandiDarkPurple: #4e444f;
+    --morandiBlue: #6d7e8f;
+    --morandiGreen: #758575;
+    --morandiPink: #a58a84;
+    --morandiBeige: #a99b89;
+    --morandiGray: #7e7e7c;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 自定义形状和效果 */
+.horizontal-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.horizontal-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.horizontal-btn {
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal-btn:hover {
+  transform: translateX(3px);
+}
+
+.horizontal-nav {
+  border-radius: 0;
+  border-bottom: 3px solid var(--morandiLightPurple);
+}
+
+.horizontal-footer {
+  border-top: 3px solid var(--morandiLightPurple);
+  margin-top: 2rem;
+}
+
+.horizontal-tag {
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--morandiPurple), var(--morandiLightPurple));
+  border-radius: 3px;
+}
+
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* 传统色彩定义 */
+  --color-heritage-red: #dc2626;
+  --color-heritage-gold: #d97706;
+  --color-heritage-blue: #1e40af;
+  --color-heritage-ink: #374151;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #e2e8f0;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* 动画效果 */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoom-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes heritage-float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes heritage-glow {
+  0% { box-shadow: 0 0 5px rgba(220, 38, 38, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(220, 38, 38, 0.5); }
+}
+
+@keyframes heritage-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes hero-text-reveal {
+  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+/* 自定义工具类 */
+.heritage-pattern-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.heritage-border-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='0.2'%3E%3Cpath d='M0 0h20v20H0V0zm10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0-2a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.heritage-text-gradient {
+  background: linear-gradient(to right, #dc2626, #ea580c);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cloud-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='56' height='28' viewBox='0 0 56 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M56 26c-2.813 0-5.456.726-7.752 2H56v-2zm-26 2h4.087C38.707 20.783 46.795 16 56 16v-2c-.672 0-1.339.024-1.999.07L54 14a2 2 0 0 1 2-2v-2a4 4 0 0 0-3.98 3.602 28.086 28.086 0 0 0-1.881-.602A5.996 5.996 0 0 1 48 9V7a8 8 0 0 0-6.9 4.233A31.15 31.15 0 0 0 30 7V5c.585 0 1.173.01 1.761.026L30 5a5 5 0 0 1 5-5v2a3 3 0 0 0-3 3l.005.261a33.969 33.969 0 0 0-4.945-.261L27 5a5 5 0 0 1 5-5v2a3 3 0 0 0-3 3v6c0 1.887.842 3.571 2.172 4.708A33.897 33.897 0 0 0 24 14v-2a3 3 0 0 0 3-3V5a5 5 0 0 1-5 5v2a3 3 0 0 0 3 3v6a5 5 0 0 1-5-5v-2a7 7 0 0 0 7-7V3a9 9 0 0 0-9 9v8a7 7 0 0 1-7-7v-2a9 9 0 0 0 9-9V3a11 11 0 0 0-11 11v4a5 5 0 0 1-5-5v-2a7 7 0 0 0 7-7V3a9 9 0 0 0-9 9v8a7 7 0 0 1-7-7v-2a9 9 0 0 0 9-9V3a11 11 0 0 0-11 11v2a13 13 0 0 0 13-13h2a15 15 0 0 1-15 15v2c.67 0 1.339-.024 1.999-.07L4 26c.21 0 .42-.012.629-.035A28.44 28.44 0 0 0 0 28h56v-2z' fill='%23dc2626' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.hui-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23dc2626' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* 轮播图特效 */
+.carousel-slide {
+  animation: slide-in 0.5s ease-out forwards;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .heritage-text-gradient {
+    font-size: 1.5rem;
+  }
+}
+
+/* 自定义滚动条 */
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(157, 139, 161, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--morandiPurple) 0%, var(--morandiLightPurple) 50%, var(--morandiDarkPurple) 100%);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--morandiDarkPurple) 0%, var(--morandiPurple) 50%, var(--morandiLightPurple) 100%);
+  transform: scale(1.1);
+}
